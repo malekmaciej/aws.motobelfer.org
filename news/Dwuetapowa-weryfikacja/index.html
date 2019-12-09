@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dwuetapowa weryfikacja - Lorem Ipsum</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="Dwuetapowa-weryfikacja">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Lekcje</a>
+        <a href="/news/">Zadania</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/news/Dwuetapowa-weryfikacja/">Dwuetapowa weryfikacja</a></h1>
+<p class="meta">Published on 2019-11-19 by <b>Admin</b></p>
+<p>
+    Jednym z podstawowych wymagania bezpieczenstwa w ka?dej firmie jest dwuetapowa autoryzacja do kont.
+    Dotyczy to dostepu do skrzynek email jak rowniez do uslug chmurowych takich jak AWS czy Microsoft Azure. 
+    W zwi?zku z tym, chcialbym abyscie samodzielnie skonfigurowali sobie swoj dostep do AWS i wlaczyli weryfikacja dwuetapowa.    
+</p>
+<p>
+    Co to jest ta weryfikacja dwuetapowa ?
+    To rodzaj dodatkowego zabezpieczenia, chroniacego logowanie do naszego konta w usludze Internetowej. Po w??czeniu autoryzacji dwuetapowej haslo przestaje wystarczyl 
+    do uzyskania do niej dostepu. Pojawia sie druga warstwa zabezpieczenia � �w �drugi etap� (pierwszym jest haslo).
+</p>
+<p>
+    W naszym przypadku najwygodniejszym i wspieranym przez AWS jest Google Authenticator - aplikacja na telefon komorkowy, darmowa, 
+    dostepna na systemy Android jak rowniez iOS.
+</p>
+<ol>
+    <li>Zainstalujcie sobie na swoich telefonach Google Authenticator - Google Play , Apple App Store</li>
+    <li>Zalogujcie sie do AWS, i wybierzcie service : <b>IAM</b>, a nast?pnie z lewego menu <b>Users</b></li>
+    <li>Znajd?cie swojego u?ytkownika i kliknijcie na niego, a nastepnie w zakladce Security Credentials kliknijcie w lini Assigned MFA device na Manage</li>
+    <li>Wybierzcie Virtual MFA device i post?pujcie zgodnie z instrukcjami na ekranie - (kliknij aby pokaza? si?  barcode, zeskanuj go w aplikacji z telefonu, przepisz dwa kolejne kody z aplikacji)</li>
+    <li>Wyloguj si? z konta AWS i zaloguj ponownie u?ywaj?c dwuetapowej weryfikacji.</li>
+</ol>
+
+</article>
+
+</main>
+
+<footer>
+<section>
+    <p>&copy; 2019 Maciej Malek</p>
+    <p>
+        <a href="http://motobelfer.pl/">Oficialna strona MotoBelfer</a>
+    </p>
+</section>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS Certificate Manager + AWS CloudFront - Lorem Ipsum</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="ACM-CloudFront">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Lekcje</a>
+        <a href="/news/">Zadania</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/ACM-CloudFront/">AWS Certificate Manager + AWS CloudFront</a></h1>
+<p class="meta">Published on 2019-11-26 by <b>Maciej Malek</b></p>
+<h1>Utworzenie certyfikatu SSL w AWS Certificate Manager</h1>
+<ul>
+<li>Serwis - <strong>AWS Certificate Manager</strong></li>
+<li>wybierzcie region - <strong>N. Virginia</strong> (prawy górny róg) - jest to bardzo wazne gdyz usługa CloudFront nie jest zregionalizowana i nie mozemy w tym przypadku użyć Frankfurtu</li>
+<li><strong>Request a certificate</strong></li>
+<li><strong>Request a public certificate</strong></li>
+<li>piszcie w Domain name pełna nazwe swojej domeny dla ktorej tworzycie certyfikat np. jannowak.motobelfer.org  - uwaga na literowki !</li>
+<li>należy wybrać <strong>DNS validation</strong></li>
+<li>tag -  Tag Name = owner, Value = nazwa waszego użytkownika</li>
+<li>następnie Review i Confirm - trzeba chwile poczekac a następnie</li>
+<li><strong>Validation - tworzymy record DNS w Route53</strong>
+image.png</li>
+<li>Teraz trzeba poczekac az certyikat zostanie utworzony i zwalidowany.</li>
+<li>Przechodzimy do Services - &gt; <strong>CloudFront</strong></li>
+</ul>
+<h1>Tworzenie CloudFront Distribution</h1>
+<ul>
+<li>
+<p><strong>Create Distribution</strong></p>
+<ul>
+<li>wybieramy <strong>Web -&gt; Get Started</strong></li>
+<li><strong>Origin Domain Name</strong> - wybieramy swój S3 bucket</li>
+<li><strong>Origin Path</strong> - zostawiamy puste</li>
+<li><strong>Origin ID</strong> - wygenerowało się automatycznie - zostawiamy tak jak jest</li>
+<li><strong>Restrict Bucket Access</strong>- do celów szkoleniowych zostawiamy &quot;No&quot;. W pracy, ze względów bezpieczeństwa, zawsze włączamy tak aby mozna bylo sie odwolac do naszej strony tylko przez CloudFront a nie bezposrednio do S3.</li>
+<li><strong>Origin Custom Headers</strong> - pozostawiamy puste</li>
+<li><strong>Viewer Protocol Policy</strong>  - zmieniamy na <strong>Redirect HTTP to HTTPS</strong></li>
+<li><strong>Object Caching</strong> - wybieramy Customize i zmieniamy Maximum TTL i Default TTL na 30
+Jest to czas jaki pliki naszej strony beda trzymane w cache'u CloudFronta - do dewelopmentu potrzebujemy miec mala wartosc tak aby zmiany w kodzie byly szybko widoczne.</li>
+<li><strong>Alternate Domain Names  (CNAMEs)</strong> - wpisujemy nasza domene np. jannowak.motobelfer.org</li>
+<li><strong>SSL Certificate</strong> - ustawiamy <strong>Custom SSL Certificate</strong> - wybieramy nasz wcześniej utworzony certyfikat</li>
+<li><strong>Default Root Object</strong>  - to jest główny plik naszej strony - wpisujemy <strong>index.html</strong></li>
+<li><strong>Create Distribution</strong> - czas tworzenia sie dystrybucji to okolo 20 minut.</li>
+</ul>
+</li>
+<li>
+<p>Po utworzeniu dystrybucji przechodzimy do Route53 i modyfikujemy nasz DNSowy record tak aby zamiast na S3 wskazywal na nasza dystrybucje CloudFront ktora powinna byc na liscie.</p>
+</li>
+</ul>
+
+</article>
+
+</main>
+
+<footer>
+<section>
+    <p>&copy; 2019 Maciej Malek</p>
+    <p>
+        <a href="http://motobelfer.pl/">Oficialna strona MotoBelfer</a>
+    </p>
+</section>
+</footer>
+
+</body>
+</html>

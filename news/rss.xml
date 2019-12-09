@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+
+<channel>
+<title>News</title>
+<link>http://localhost:8000/</link>
+<description>Grow with Technology</description>
+
+<item>
+<title>Dwuetapowa weryfikacja</title>
+<link>http://localhost:8000/news/Dwuetapowa-weryfikacja/</link>
+<description>
+<![CDATA[
+<p>
+Jednym z podstawowych wymagania bezpiecze?stwa w ka?dej firmie jest dwuetapowa autoryzacja do kont. Dotyczy to dost?pu do skrzynek email jak równie? do us?ug chmurowych takich&nbsp;<a href="http://localhost:8000/news/Dwuetapowa-weryfikacja/">...</a>
+</p>
+<p><a href="http://localhost:8000/news/Dwuetapowa-weryfikacja/">Read More</a></p>
+]]>
+</description>
+<pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Statyczna strona www na S3</title>
+<link>http://localhost:8000/news/Statyczna-strona-s3/</link>
+<description>
+<![CDATA[
+<p>
+&nbsp;<a href="http://localhost:8000/news/Statyczna-strona-s3/">...</a>
+</p>
+<p><a href="http://localhost:8000/news/Statyczna-strona-s3/">Read More</a></p>
+]]>
+</description>
+<pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+</item>
+
+
+</channel>
+</rss>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQS czy SNS a może SES - Lorem Ipsum</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body id="SNS-SES-SQS">
+
+<nav>
+<section>
+    <span class="home">
+        <a href="/">Home</a>
+    </span>
+    <span class="links">
+        <a href="/blog/">Lekcje</a>
+        <a href="/news/">Zadania</a>
+    </span>
+</section>
+</nav>
+
+<main>
+<article>
+<h1><a href="/blog/SNS-SES-SQS/">SQS czy SNS a może SES</a></h1>
+<p class="meta">Published on 2019-12-09 by <b>Maciej Malek</b></p>
+<h1>SES - Simple Email Service</h1>
+<p>Zalety i wady</p>
+<ul>
+<li>Różne protokoły (SMTP , REST API, AWS CLI, AWS SDK)</li>
+<li>Wsparcie dla nagłówków email</li>
+<li>Załaczniki, HTML, templates</li>
+<li>Możliwość wysyłania i odbierania maili na dużą skalę</li>
+<li>Symulator</li>
+<li>Cena</li>
+<li>Służy do komunikacji z ludźmi (email)</li>
+</ul>
+<h1>SNS - Simple Notification Service</h1>
+<p>Zalety i wady</p>
+<ul>
+<li>Integracja z większością serwisów AWS</li>
+<li>Typ - jeden nadawca -&gt; wielu odbiorców</li>
+<li>Limit na długość wiadomości to 8192 znaki UTF-8</li>
+<li>Brak możliwości przesyłania załączników, HTML</li>
+<li>Wymagane potwierdzenie odbiorcy przy subskrypcji</li>
+<li>Służy do natychmiastowej komunikacji pomiędzy aplikacjami lub serwisami AWS</li>
+</ul>
+<h1>SQS - Simple Queue Service</h1>
+<p>Zalety i wady</p>
+<ul>
+<li>Najstarsza usługa AWS</li>
+<li>Możliwość wyboru standardowej kolejki lub FIFO (First-In-First-Out)</li>
+<li>Możliwość przechowywania wiadomości do 14 dni</li>
+<li>Brak ograniczeń w ilość wiadomości w kolejce</li>
+<li>Standardowo maksymalna wielkość wiadomości to 256KB</li>
+<li>Służy do buforowania wiadomość - wielu nadawców -&gt; jeden odbiorca</li>
+</ul>
+
+</article>
+
+</main>
+
+<footer>
+<section>
+    <p>&copy; 2019 Maciej Malek</p>
+    <p>
+        <a href="http://motobelfer.pl/">Oficialna strona MotoBelfer</a>
+    </p>
+</section>
+</footer>
+
+</body>
+</html>
